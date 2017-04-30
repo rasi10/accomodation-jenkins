@@ -27,10 +27,10 @@ Test case get count clients
     ${total}=             Get the total of clients
     log to console        ${total}   
   
-Test case create a client
-    Create a client 
+#Test case create a client
+#    Create a client 
     
-Test case delete a client
-    Delete a client    16
+#Test case delete a client
+#    Delete a client    16
   
   
