@@ -16,17 +16,12 @@
 	</properties>
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/io.devcon5/jackson-jsonb-provider -->
-		<dependency>
-			<groupId>io.devcon5</groupId>
-			<artifactId>jackson-jsonb-provider</artifactId>
-			<version>1.1</version>
-		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/org.eclipse.persistence.moxy -->
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>org.eclipse.persistence.moxy</artifactId>
-			<version>2.6.0-M3</version>
+			<version>2.6.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
