@@ -9,27 +9,25 @@
 Library                   Collections
 
 
-Resource                  environment_variables.robot
+#Resource                  environment_variables.robot
 Resource                  client_operations.robot
 
 *** Test cases***
-Test case get all clients
-    Get all clients
-	
-Test case get a client by id
-    Get a specific client by id     6
-
-Test case edit a client
-    Edit a client 
-       
-Test case get count clients
-    ${total}=             Get the total of clients
-    log to console        ${total}   
-  
-#Test case create a client
-#    Create a client 
+Test get total of clients
+    Get the total of clients
     
-#Test case delete a client
-#    Delete a client    16
-  
-  
+Test create a new client
+    Create a client  
+ 
+Test delete a client    
+    Delete a client 
+    
+Test edit a client
+    Edit a client    
+
+Test get total of clients2
+    Get the total of clients
+    
+Test Get id last client
+    Get id last client    
+    
