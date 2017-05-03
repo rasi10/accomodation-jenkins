@@ -1,5 +1,8 @@
+//http://stackoverflow.com/questions/12823000/bean-validation-constraints-violated-while-executing-automatic-bean-validation
+
 /*
  * To change this license header, choose License Headers in Project Properties.
+
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -22,17 +25,17 @@ public abstract class AbstractFacade<T> {
 
     protected abstract EntityManager getEntityManager();
 
-    public void create(T entity) {
-        getEntityManager().persist(entity);
-    }
-
-    public void edit(T entity) {
-        getEntityManager().merge(entity);
-    }
-
-    public void remove(T entity) {
-        getEntityManager().remove(getEntityManager().merge(entity));
-    }
+//    public void create(T entity) {
+//        getEntityManager().persist(entity);
+//    }
+//
+//    public void edit(T entity) {
+//        getEntityManager().merge(entity);
+//    }
+//
+//    public void remove(T entity) {
+//        getEntityManager().remove(getEntityManager().merge(entity));
+//    }
 
     public T find(Object id) {
         return getEntityManager().find(entityClass, id);
@@ -52,6 +55,7 @@ public abstract class AbstractFacade<T> {
         q.setFirstResult(range[0]);
         return q.getResultList();
     }
+    
 
     public int count() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
@@ -60,5 +64,45 @@ public abstract class AbstractFacade<T> {
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
     }
+    
+    private boolean constraintValidationsDetected(T entity) {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
+        Set<ConstraintViolation<T>> constraintViolations = validator.validate(entity);
+        if (constraintViolations.size() > 0) {
+          Iterator<ConstraintViolation<T>> iterator = constraintViolations.iterator();
+          while (iterator.hasNext()) {
+            ConstraintViolation<T> cv = iterator.next();
+            System.err.println(cv.getRootBeanClass().getName() + "." + cv.getPropertyPath() + " " + cv.getMessage());
+
+            JsfUtil.addErrorMessage(cv.getRootBeanClass().getSimpleName() + "." + cv.getPropertyPath() + " " + cv.getMessage());
+          }
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
+
+      public void create(T entity) {
+        if (!constraintValidationsDetected(entity)) {
+          getEntityManager().persist(entity);
+        }
+      }
+
+      public T edit(T entity) {
+        if (!constraintValidationsDetected(entity)) {
+          return getEntityManager().merge(entity);
+        }
+        else {
+          return entity;
+        }
+      }
+
+      public void remove(T entity) {
+        if (!constraintValidationsDetected(entity)) {
+          getEntityManager().remove(getEntityManager().merge(entity));
+        }
+      }
     
 }
