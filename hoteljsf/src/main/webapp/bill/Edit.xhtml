@@ -14,7 +14,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form prependId="true">
+            <h:form prependId="false">
                 <h:panelGrid class="table" columns="2">
                     <h:outputLabel value="#{bundle.EditBillLabel_id}" for="id" />
                     <p:inputText class="form-control" id="id" value="#{billController.selected.id}" readonly="#{facesContext.renderResponse}" title="#{bundle.EditBillTitle_id}" required="true" requiredMessage="#{bundle.EditBillRequiredMessage_id}"/>

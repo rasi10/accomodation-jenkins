@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form prependId="false">
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.CreateBedroomStatusLabel_id}" for="id" />
                     <h:inputText id="id" value="#{bedroomStatusController.selected.id}" title="#{bundle.CreateBedroomStatusTitle_id}" required="true" requiredMessage="#{bundle.CreateBedroomStatusRequiredMessage_id}"/>
@@ -23,10 +23,10 @@
                     <h:inputText id="name" value="#{bedroomStatusController.selected.name}" title="#{bundle.CreateBedroomStatusTitle_name}" required="true" requiredMessage="#{bundle.CreateBedroomStatusRequiredMessage_name}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{bedroomStatusController.create}" value="#{bundle.CreateBedroomStatusSaveLink}" />
+                <h:commandLink id="saveBtn" action="#{bedroomStatusController.create}" value="#{bundle.CreateBedroomStatusSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{bedroomStatusController.prepareList}" value="#{bundle.CreateBedroomStatusShowAllLink}" immediate="true"/>
+                <h:commandLink id="listBtn" action="#{bedroomStatusController.prepareList}" value="#{bundle.CreateBedroomStatusShowAllLink}" immediate="true"/>
                 <br />
                 <br />
                 <h:link outcome="/index" value="#{bundle.CreateBedroomStatusIndexLink}"/>

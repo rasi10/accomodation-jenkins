@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form prependId="false">
                 <h:panelGrid class="table" columns="2">
                     <h:outputLabel value="#{bundle.CreateBillLabel_id}" for="id" />
                     <h:inputText class="form-control" id="id" value="#{billController.selected.id}" title="#{bundle.CreateBillTitle_id}" readonly="true" required="false" requiredMessage="#{bundle.CreateBillRequiredMessage_id}"/>
@@ -27,10 +27,10 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink  class="btn btn-primary" action="#{billController.create}" value="#{bundle.CreateBillSaveLink}" />
+                <h:commandLink id="saveBtn" class="btn btn-primary" action="#{billController.create}" value="#{bundle.CreateBillSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink class="btn btn-default"  action="#{billController.prepareList}" value="#{bundle.CreateBillShowAllLink}" immediate="true"/>
+                <h:commandLink id="listBtn" class="btn btn-default"  action="#{billController.prepareList}" value="#{bundle.CreateBillShowAllLink}" immediate="true"/>
                 <br />
                 <br />
                 <h:link class="btn btn-default" outcome="/index" value="#{bundle.CreateBillIndexLink}"/>
