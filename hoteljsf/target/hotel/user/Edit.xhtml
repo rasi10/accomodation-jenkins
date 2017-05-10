@@ -14,7 +14,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form prependId="false">
                 <h:panelGrid class="table" columns="2">
                     <h:outputLabel value="#{bundle.EditUserLabel_id}" for="id" />
                     <p:inputText class="form-control" id="id" value="#{userController.selected.id}" title="#{bundle.EditUserTitle_id}" readonly="#{facesContext.renderResponse}" required="true" requiredMessage="#{bundle.EditUserRequiredMessage_id}"/>

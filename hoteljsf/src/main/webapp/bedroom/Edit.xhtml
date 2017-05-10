@@ -35,10 +35,10 @@
                         <f:selectItems value="#{typeBedroomController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
-                <h:commandLink class="btn btn-primary" action="#{bedroomController.update}" value="#{bundle.EditBedroomSaveLink}"/>
+                <h:commandLink id="saveBtn" class="btn btn-primary" action="#{bedroomController.update}" value="#{bundle.EditBedroomSaveLink}"/>
                 <br />
                 <br />
-                <h:commandLink class="btn btn-default" action="#{bedroomController.prepareList}" value="#{bundle.EditBedroomShowAllLink}" immediate="true"/>
+                <h:commandLink id="listBtn" class="btn btn-default" action="#{bedroomController.prepareList}" value="#{bundle.EditBedroomShowAllLink}" immediate="true"/>
                 <br />
                 <br />
                 <h:link class="btn btn-default" outcome="/index" value="#{bundle.EditBedroomIndexLink}" />

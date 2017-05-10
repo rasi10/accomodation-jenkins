@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form prependId="false">
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.EditTypeBedroomLabel_id}" for="id" />
                     <h:inputText id="id" value="#{typeBedroomController.selected.id}" title="#{bundle.EditTypeBedroomTitle_id}" required="true" requiredMessage="#{bundle.EditTypeBedroomRequiredMessage_id}"/>

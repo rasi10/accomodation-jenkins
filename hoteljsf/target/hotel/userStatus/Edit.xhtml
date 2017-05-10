@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form prependId="false">
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.EditUserStatusLabel_id}" for="id" />
                     <h:inputText id="id" value="#{userStatusController.selected.id}" title="#{bundle.EditUserStatusTitle_id}" required="true" requiredMessage="#{bundle.EditUserStatusRequiredMessage_id}"/>

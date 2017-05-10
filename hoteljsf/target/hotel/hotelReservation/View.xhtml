@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form prependId="false">
                 <h:panelGrid  class="table table-striped table-hover table-bordered" columns="2">
                     <h:outputText value="#{bundle.ViewHotelReservationLabel_id}"/>
                     <h:outputText value="#{hotelReservationController.selected.id}" title="#{bundle.ViewHotelReservationTitle_id}"/>

@@ -13,7 +13,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form prependId="false">
                 <h:panelGrid columns="2">
                     <h:outputText value="#{bundle.ViewBedroomStatusLabel_id}"/>
                     <h:outputText value="#{bedroomStatusController.selected.id}" title="#{bundle.ViewBedroomStatusTitle_id}"/>

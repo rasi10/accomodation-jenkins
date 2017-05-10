@@ -35,10 +35,10 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink class="btn btn-primary" action="#{bedroomController.create}" value="#{bundle.CreateBedroomSaveLink}" />
+                <h:commandLink id="saveBtn" class="btn btn-primary" action="#{bedroomController.create}" value="#{bundle.CreateBedroomSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink class="btn btn-default" action="#{bedroomController.prepareList}" value="#{bundle.CreateBedroomShowAllLink}" immediate="true"/>
+                <h:commandLink id="listBtn" class="btn btn-default" action="#{bedroomController.prepareList}" value="#{bundle.CreateBedroomShowAllLink}" immediate="true"/>
                 <br />
                 <br />
                 <h:link class="btn btn-default" outcome="/index" value="#{bundle.CreateBedroomIndexLink}"/>
