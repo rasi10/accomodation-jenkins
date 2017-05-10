@@ -23,9 +23,9 @@ Teardown
 
 *** Test Cases ***
 Test_Login_logout
-    Input Text                                 id=formLogin:login                                           jp
-    Input Text                                 id=formLogin:senha                                           1010
-    Click Element                              name=formLogin:j_idt27
+    Input Text                                 id=login                                           jp
+    Input Text                                 id=senha                                           1010
+    Click Element                              id=loginBtn
     Wait Until Page Contains Element           xpath=//a[@class='dropdown-toggle']
     click element                              xpath=//a[@class='dropdown-toggle']
     Wait Until Page Contains Element           xpath=//i[@class='fa fa-sign-out fa-fw']
